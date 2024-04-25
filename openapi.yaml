@@ -1,0 +1,41 @@
+# Generated with protoc-gen-openapi
+# https://github.com/google/gnostic/tree/master/apps/protoc-gen-openapi
+
+openapi: 3.0.3
+info:
+    title: RemoveWatermarkSrv API
+    version: 0.0.1
+paths:
+    /removewatermark/remove_watermark:
+        post:
+            tags:
+                - RemoveWatermarkSrv
+            description: 去除版权处理
+            operationId: RemoveWatermarkSrv_RemoveWatermark
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/RemoveWatermarkReq'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/RemoveWatermarkRes'
+components:
+    schemas:
+        RemoveWatermarkReq:
+            type: object
+            properties:
+                fileurl:
+                    type: string
+        RemoveWatermarkRes:
+            type: object
+            properties:
+                pdfurl:
+                    type: string
+tags:
+    - name: RemoveWatermarkSrv

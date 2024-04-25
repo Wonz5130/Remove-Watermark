@@ -1,0 +1,10 @@
+{
+    "protoc": {
+        "path": "/Users/wonz/go/bin/removewatermark",
+        "options": [
+            "--proto_path=protos/v3",
+            "--proto_path=protos/v2",
+            "--java_out=gen/java"
+        ]
+    }
+}

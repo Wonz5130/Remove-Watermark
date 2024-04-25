@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package api.removewatermark;
+
+import "google/api/annotations.proto";
+
+option go_package = "remove-watermark/api/removewatermark;removewatermark";
+option java_multiple_files = true;
+option java_package = "api.removewatermark";
+
+service RemoveWatermarkSrv {
+	// 去除版权处理
+	rpc RemoveWatermark (RemoveWatermarkReq) returns (RemoveWatermarkRes) {
+	  option (google.api.http) = {
+		post: "/removewatermark/remove_watermark"
+		body: "*"
+	  };
+	};
+  }
+  
+  message RemoveWatermarkReq {
+	string fileurl = 1;
+  }
+  
+  message RemoveWatermarkRes {
+	string pdfurl = 1;
+  }
